@@ -178,11 +178,11 @@ dhcp.option.requested_ip_address==172.16.13.85
 - Structured SOC investigation workflow
 
 
-  Activity	MITRE Technique
-Network Scanning 	T1046 – Network Service Discovery
-ARP Poisoning	T1557.002 – Adversary-in-the-Middle
-Credential Interception	T1557 – Man-in-the-Middle
-DNS Tunneling	T1071.004 – Application Layer Protocol: DNS
-ICMP Tunneling	T1095 – Non-Application Layer Protocol
-Credential Harvesting	T1056 – Input Capture
+## Activity	MITRE Technique
+- Network Scanning 	T1046 – Network Service Discovery
+- ARP Poisoning	T1557.002 – Adversary-in-the-Middle
+- Credential Interception	T1557 – Man-in-the-Middle
+- DNS Tunneling	T1071.004 – Application Layer Protocol: DNS
+- ICMP Tunneling	T1095 – Non-Application Layer Protocol
+- Credential Harvesting	T1056 – Input Capture
 
