@@ -166,6 +166,53 @@ dhcp.option.requested_ip_address==172.16.13.85
 - Encoded command patterns
 - High-frequency DNS requests to suspicious domain
 - Looked for suspicious long DNS queries → dataexfil[.]com
+  
+
+  ## 📷 Lab Screenshots – Wireshark Investigation
+
+### 1️⃣ TCP Connect Scan Detection
+![TCP Connect Scan](images/image1_tcp_connect_scan.png)  
+Observed full TCP handshake indicating TCP Connect scan.
+
+### 2️⃣ SYN Scan Detection
+![SYN Scan](images/image2_SYN_Scan.png)  
+Half-open TCP scan detected via SYN flags and window size ≤ 1024.
+
+### 3️⃣ UDP Scan Detection
+![UDP Scan](images/image3_udp_scan.png)  
+Closed UDP ports identified through ICMP Destination Unreachable messages.
+
+### 4️⃣ ARP Requests by Attacker
+![ARP Requests](images/image4_arp_requests.png)  
+Attacker MAC 00:0c:29:e2:18:b4 sending ARP requests → MITM confirmation.
+
+### 5️⃣ MAC Address Column Verification
+![MAC Address Columns](images/image5_mac_columns.png)  
+Observed attacker MAC in traffic → confirmed packet redirection.
+
+### 6️⃣ Intercepted Credentials
+![Credentials Intercepted](images/image6_credentials.png)  
+Captured usernames and passwords from HTTP POST traffic.
+
+### 7️⃣ DHCP Host Identification
+![DHCP Host](images/image7_dhcp.png)  
+Mapped hostnames to IP and MAC addresses using DHCP packets.
+
+### 8️⃣ NetBIOS Host Identification
+![NetBIOS Host](images/image8_nbns.png)  
+Filtered NetBIOS registrations to isolate target hostnames.
+
+### 9️⃣ Kerberos User Activity
+![Kerberos User](images/image9_kerberos.png)  
+Tracked service tickets and user IP addresses for host identification.
+
+### 🔟 ICMP Tunneling Detection
+![ICMP Tunneling](images/image10_icmp_tunnel.png)  
+Detected large/repetitive ICMP payloads containing encapsulated SSH data.
+
+### 1️⃣1️⃣ DNS Tunneling Detection
+![DNS Tunneling](images/image11_dns_tunnel.png)  
+Suspicious high-frequency long DNS queries → data exfiltration activity.
 
 ---
 
